@@ -91,7 +91,7 @@ input1.addEventListener("click", function () {
 		else {
 			localStorage.setItem("index", i);
 			localStorage.setItem("score", score);
-			sound(`Nice. Right answer!! The next word is ${array[i]}`);
+			sound(`Right answer, and The next word is ${array[i]}`);
 		}
 		points.innerHTML = score;
 	}
@@ -104,12 +104,36 @@ input1.addEventListener("click", function () {
 		}
 	}
 })
+// localStorage.clear();
 repeat.addEventListener("click", function () {
 	if (array[i] === undefined) {
 		sound(`You have completed the test, congratulations!!`);
 	}
 	else {
 		sound(`The current word is ${array[i]}`);
+	}
+})
+
+let moon = document.querySelector('.moon');
+let list = document.querySelector('.list');
+let bar = document.querySelector('.bar');
+let check=1;
+moon.addEventListener('click', function (e) {
+    if (check % 2 != 0) {
+        moon.innerHTML = '☀️';
+        document.body.style.color = 'white';
+        document.body.style.background = 'black';
+        bar.style.border = '3px solid white';
+        points.style.color = 'white';
+		check++;
+    }
+    else {
+		moon.innerHTML = '🌑';
+        document.body.style.color = 'black';
+        document.body.style.background = 'white';
+        bar.style.border = '3px solid black';
+        points.style.color = 'black';
+		check++;
 	}
 })
 
