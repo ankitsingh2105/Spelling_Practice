@@ -1,0 +1,28 @@
+/* pre defined classes*/
+body{
+    margin: 12px;
+}
+.align{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.align2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* css */
+
+.bar{
+    justify-content: flex-start;
+}
+.bar :last-child {
+    margin-left: auto;
+}
+li{
+    list-style: none;
+    margin: 0px 22px 0px 0px ;
+}
