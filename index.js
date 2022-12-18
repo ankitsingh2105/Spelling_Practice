@@ -64,7 +64,7 @@ input1.addEventListener("click", function () {
 		window.speechSynthesis.speak(utt);
 	}
 	else {
-		var utt = new SpeechSynthesisUtterance("incorrect answer" );
+		var utt = new SpeechSynthesisUtterance("incorrect answer, try again" );
 		utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Alice');
 		utt.pitch = 1;
 		utt.rate = 1;
