@@ -1,6 +1,8 @@
 /* pre defined classes*/
 body {
     margin: 2px 2px;
+    background-color: black;
+    color: white;
 }
 
 .align {
@@ -32,6 +34,12 @@ body {
     color: black;
     font-size: 18px;
 }
+.list2{
+    margin-right :30px;
+}
+.list:hover{
+    cursor: pointer;
+}
 
 .bar {
     justify-content: flex-start;
@@ -39,7 +47,7 @@ body {
     padding: 0px 10px;
     color: white;
     border-radius: 2px;
-    border: 1px solid black;
+    border: 3px solid white;
 }
 
 .head {
@@ -65,14 +73,16 @@ body {
 }
 
 .image {
+    padding-top: 2px;
     height: 50px;
     width: 50px;
 }
-
+.moon{
+    margin-right: 0px;
+}
 .main {
     margin-top: 30px;
 }
-
 .score {
     font-size: 52px;
 }

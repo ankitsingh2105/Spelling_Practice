@@ -182,6 +182,9 @@ input1.addEventListener("click", function () {
 reveal.addEventListener("click", function () {
 	word.style.color = 'var(--blue)';
 })
+reveal.addEventListener("blur" , function(){
+	word.style.color = 'transparent';
+})
 
 
 clear.addEventListener("click", function () {
@@ -228,11 +231,11 @@ repeat.addEventListener("click", function () {
 let check = 1;
 moon.addEventListener('click', function (e) {
 	word.style.color = 'transparent';
-	if (check % 2 != 0) {
+	if (check % 2 == 0) {
 		moon.innerHTML = '☀️';
 		document.body.style.color = 'white';
 		document.body.style.background = 'black';
-		bar.style.border = '1px solid white';
+		bar.style.border = '3px solid white';
 		points.style.color = 'white';
 		check++;
 	}
@@ -240,7 +243,7 @@ moon.addEventListener('click', function (e) {
 		moon.innerHTML = '🌑';
 		document.body.style.color = 'black';
 		document.body.style.background = 'white';
-		bar.style.border = '1px solid black';
+		bar.style.border = '3px solid black';
 		points.style.color = 'black';
 		check++;
 	}
