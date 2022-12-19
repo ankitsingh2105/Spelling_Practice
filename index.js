@@ -59,7 +59,7 @@ function sound2(text) {
 	window.speechSynthesis.cancel();
 	myTimeout2 = setTimeout(myTimer2, 20000);
 	var utt = new SpeechSynthesisUtterance(text);
-	utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Alice');
+	utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Google US English');
 	utt.pitch = 1;
 	utt.rate = 0.9;
 	utt.onend = function () { clearTimeout(myTimeout); }
@@ -264,6 +264,8 @@ floating.addEventListener("click", function () {
 	of difficulty, and then type the word as I ask, and you will be
 	scored accordingly. Lets go!`);
 })
+
+
 
 
 
