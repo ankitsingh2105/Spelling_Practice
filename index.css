@@ -36,6 +36,7 @@ body {
 }
 .head{
     text-shadow: 1px 1px 1px var(--blue);
+    margin-top: 20px;
 }
 .bar :last-child {
     margin-left: auto;
@@ -50,15 +51,26 @@ body {
     height: 50px;
     width: 50px;
 }
+.main{
+    margin-top: 30px;
+}
 .score{
     font-size: 52px;
 }
-
-
-
-
-
-
+.word{
+    font-size: 33px;
+    color: var(--blue);
+    font-weight: bolder;
+    text-shadow: 0 0 10px var(--blue);
+    color: transparent;
+}
+.level{
+    font-size: 23px;
+    font-weight: bolder;
+    color: var(--blue);
+    text-shadow: .7px .7px 1px black;
+}
+/* element css */
 
 li {
     list-style: none;

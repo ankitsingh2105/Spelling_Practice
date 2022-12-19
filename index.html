@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,34 +9,50 @@
     <link rel="icon" href="/1.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <nav class="bar align">
         <li class="list"><img class="image" src="./1.png" alt="" srcset=""></li>
         <li class="list">Home</li>
         <li class="list"> <a class="link" style="color:white" about target="_blank"
-            href="http://www.ankitsinghchauhan.tech/">Portfolio</a></li>
+                href="http://www.ankitsinghchauhan.tech/">Portfolio</a></li>
         <li class="list moon">🌑</li>
     </nav>
-    <h1  style="font-size: 57px" class="align head" >Spell Hornet</h1>
+    <h1 style="font-size: 57px" class="align head">Spell Hornet</h1>
+    <h2 class="align2">Select Level</h2>
+    <div class="level1 align">
+        <div class="level">Easy</div>
+        <div style="margin: 0px 4rem;" class="level">Medium</div>
+        <div class="level">Hard</div>
+    </div>
     <div class="main align2">
         <div class="score align">
             <div class="points">0</div>
-            <div class="total">/10</div>
+            <div class="total">/0</div>
         </div>
+        <br>
+        <div class="word">Word to be revealed</div>
         <br>
         <input type="text" name="" id="spelling">
         <br>
         <button class="input1">Check Spelling</button>
         <br>
-        <button class="repeat">Current Word</button>
+        <div class="align3">
+            <button style="margin:0px 0px" class="repeat">Current Word</button>
+            <button style="margin:0px 10px" class="clear">Restart Game</button>
+            <button style="margin:0px 0px" class="reveal">Reveal Word</button>
+        </div>
     </div>
     <div class="instructions align2">
         <h1>Instructions</h1>
-        <div class="instr"><strong>1.</strong> On clicking <strong>Check Spelling</strong> button we will check the spelling of the word you entered after the voice assistant tell you the word.</div>
+        <div class="instr"><strong>1.</strong> On clicking <strong>Check Spelling</strong> button we will check the
+            spelling of the word you entered after the voice assistant tell you the word.</div>
         <br>
-        <div class="instr"><strong>2.</strong> On clicking <strong>Current Word </strong> button the voice assistant will repeat the current word.</div>
+        <div class="instr"><strong>2.</strong> On clicking <strong>Current Word </strong> button the voice assistant
+            will repeat the current word.</div>
         <br>
     </div>
-    <script src="index.js" ></script>
+    <script src="index.js"></script>
 </body>
+
 </html>
