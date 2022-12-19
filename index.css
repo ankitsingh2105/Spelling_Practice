@@ -18,6 +18,7 @@ body {
 
 /* define end */
 
+
 /* css variables */
 
 :root {
@@ -26,9 +27,11 @@ body {
 }
 
 /* var end */
+
+
 .list {
     color: black;
-    font-size:18px;
+    font-size: 18px;
 }
 
 .bar {
@@ -121,23 +124,25 @@ input {
 
 a {
     text-decoration: none;
-    color: black ;
+    color: black;
 }
 
 /*  floating */
 
-.floating{
+.floating {
     position: fixed;
     bottom: 10%;
     right: 2%;
 }
-.fa-info{
+
+.fa-info {
     font-size: 23px;
     background-color: #49c5b6;
     border-radius: 213px;
-    padding:15px 15px;
+    padding: 15px 15px;
     border: 1px solid black;
 }
-.floating:hover{
+
+.floating:hover {
     cursor: pointer;
 }
