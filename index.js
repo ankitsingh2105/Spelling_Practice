@@ -33,7 +33,7 @@ function sound(text) {
 	var utt = new SpeechSynthesisUtterance(text);
 	utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Alice');
 	utt.pitch = 1;
-	utt.rate = .8;
+	utt.rate = 0.9;
 	utt.onend = function () { clearTimeout(myTimeout); }
 	window.speechSynthesis.speak(utt);
 }
@@ -73,6 +73,7 @@ level.forEach((element, index) => {
 	element.addEventListener("click", function () {
 		word.style.color = 'transparent';
 		if (index === 0) {
+			sound(`easy level selected!`)
 			let indexNumber = localStorage.getItem("index1");
 			let Score = localStorage.getItem("score1");
 			if (indexNumber === null) {
@@ -89,6 +90,7 @@ level.forEach((element, index) => {
 			points.innerHTML = score;
 		}
 		else if (index === 1) {
+			sound(`medium level selected!`)
 			let indexNumber1 = localStorage.getItem("index2");
 			let Score1 = localStorage.getItem("score2");
 			if (indexNumber1 === null) {
@@ -105,6 +107,7 @@ level.forEach((element, index) => {
 			points.innerHTML = score;
 		}
 		else {
+			sound(`hard level selected!`)
 			let indexNumber2 = localStorage.getItem("index3");
 			let Score2 = localStorage.getItem("score3");
 			if (indexNumber2 === null) {
@@ -169,13 +172,24 @@ reveal.addEventListener("click", function () {
 
 
 clear.addEventListener("click", function () {
-	localStorage.clear();
+	if(array[0]==='tree'){
+			localStorage.removeItem("index1");
+			localStorage.removeItem("score1");
+	}
+	else if(array[0]==='attack'){
+			localStorage.removeItem("index2");
+			localStorage.removeItem("score2");
+	}
+	else{
+		localStorage.removeItem("index3");		
+		localStorage.removeItem("score3");		
+	}
 	word.style.color = 'transparent';
 	if (array[i] === undefined) {
 		sound("Please select a level and start the game");
 	}
 	else {
-		score = 0;
+		score = 0;	
 		i = 0;
 		input.value = "";
 		points.innerHTML = score;

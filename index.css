@@ -70,6 +70,9 @@ body {
     color: var(--blue);
     text-shadow: .7px .7px 1px black;
 }
+.level:hover{
+    cursor: pointer;
+}
 /* element css */
 
 li {
@@ -83,6 +86,9 @@ button {
     border: none;
     box-shadow: 2px 2px 3px black;
     border-radius: 5px;
+}
+button:hover{
+    cursor: pointer;
 }
 input{
     padding: 6px;
