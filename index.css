@@ -147,11 +147,12 @@ a {
 
 .floating {
     position: fixed;
-    bottom: 10%;
+    bottom: 6%;
     right: 2%;
+    opacity: 90%;
 }
 
-.fa-info {
+.info {
     font-size: 23px;
     background-color: #49c5b6;
     border-radius: 213px;
@@ -162,10 +163,30 @@ a {
 .floating:hover {
     cursor: pointer;
 }
-
+.links{
+    font-size: 33px;
+    margin: 32px 10px;
+}
+.fa-github{
+    font-size: 34px;
+    margin-bottom: 12px;
+    color: white;
+}
+.clear{
+    margin: 0px 5px;
+}
 
 /* media queries */
-
+@media screen and (min-width: 393px) {
+    .clear{
+        margin: 0px 18px;
+    }
+}
+@media screen and (min-width: 600px) {
+    .clear{
+        margin: 0px 28px;
+    }
+}
 @media screen and (min-width: 727px) {
     .instructions{
         margin: 40px 83px;

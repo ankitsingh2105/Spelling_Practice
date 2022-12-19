@@ -229,22 +229,27 @@ repeat.addEventListener("click", function () {
 
 
 let check = 1;
+let link2 = document.querySelector('.fa-github');
 moon.addEventListener('click', function (e) {
+	console.log(link2);
 	word.style.color = 'transparent';
 	if (check % 2 == 0) {
+		link2.style.color='white'
+		
 		moon.innerHTML = '☀️';
-		document.body.style.color = 'white';
-		document.body.style.background = 'black';
 		bar.style.border = '3px solid white';
 		points.style.color = 'white';
+		document.body.style.color = 'white';
+		document.body.style.background = 'black';
 		check++;
 	}
 	else {
+		link2.style.color='black'
 		moon.innerHTML = '🌑';
-		document.body.style.color = 'black';
-		document.body.style.background = 'white';
 		bar.style.border = '3px solid black';
 		points.style.color = 'black';
+		document.body.style.color = 'black';
+		document.body.style.background = 'white';
 		check++;
 	}
 })
