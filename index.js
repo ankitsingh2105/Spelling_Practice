@@ -38,7 +38,7 @@ let array = [];
 function myTimer() {
 	window.speechSynthesis.pause();
 	window.speechSynthesis.resume();
-	myTimeout = setTimeout(myTimer, 1000);
+	myTimeout = setTimeout(myTimer, 10000);
 }
 function sound(text) {
 	window.speechSynthesis.cancel();
@@ -53,11 +53,11 @@ function sound(text) {
 function myTimer2() {
 	window.speechSynthesis.pause();
 	window.speechSynthesis.resume();
-	myTimeout2 = setTimeout(myTimer2, 100000);
+	myTimeout2 = setTimeout(myTimer2, 20000);
 }
 function sound2(text) {
 	window.speechSynthesis.cancel();
-	myTimeout2 = setTimeout(myTimer2, 100000);
+	myTimeout2 = setTimeout(myTimer2, 20000);
 	var utt = new SpeechSynthesisUtterance(text);
 	utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Alice');
 	utt.pitch = 1;
@@ -182,7 +182,7 @@ input1.addEventListener("click", function () {
 reveal.addEventListener("click", function () {
 	word.style.color = 'var(--blue)';
 })
-reveal.addEventListener("blur" , function(){
+reveal.addEventListener("blur", function () {
 	word.style.color = 'transparent';
 })
 
