@@ -21,10 +21,15 @@ body {
 /* css variables */
 
 :root {
-    --blue: #8636cc;
+    /* --blue: #8636cc; */
+    --blue: #49c5b6;
 }
 
 /* var end */
+.list {
+    color: black;
+    font-size:18px;
+}
 
 .bar {
     justify-content: flex-start;
@@ -32,47 +37,56 @@ body {
     padding: 6px 16px;
     color: white;
     border-radius: 2px;
-    border: 2px solid black;
+    border: 1px solid black;
 }
-.head{
+
+.head {
     text-shadow: 1px 1px 1px var(--blue);
-    margin-top: 20px;
+    margin-top: 30px;
 }
+
 .bar :last-child {
     margin-left: auto;
 }
 
 .instructions {
-    margin: 20px 12px;
+    margin: 40px 12px;
     letter-spacing: 1px;
     line-height: 23px;
 }
-.image{
+
+.image {
     height: 50px;
     width: 50px;
 }
-.main{
+
+.main {
     margin-top: 30px;
 }
-.score{
+
+.score {
     font-size: 52px;
 }
-.word{
+
+.word {
     font-size: 33px;
     color: var(--blue);
     font-weight: bolder;
     text-shadow: 0 0 10px var(--blue);
     color: transparent;
 }
-.level{
+
+.level {
     font-size: 23px;
     font-weight: bolder;
     color: var(--blue);
     text-shadow: .7px .7px 1px black;
 }
-.level:hover{
+
+.level:hover {
     cursor: pointer;
 }
+
 /* element css */
 
 li {
@@ -82,21 +96,45 @@ li {
 }
 
 button {
-    padding: 5px 10px;
-    border: none;
-    box-shadow: 2px 2px 3px black;
-    border-radius: 5px;
+    background-color: var(--blue);
+    color: black;
+    border: 1px solid black;
+    box-shadow: 2px 3px 2px #183153;
+    border-radius: 3px;
+    font-size: 15px;
+    padding: 2px 7px;
+    transition: 0.2s all;
+    font-weight: bolder;
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
 }
-input{
+
+input {
     padding: 6px;
     font-size: 18px;
     box-shadow: 2px 2px 3px black;
     border: .1px solid black;
     border-radius: 5px;
 }
-a{
+
+a {
     text-decoration: none;
+    color: black ;
+}
+
+/*  floating */
+
+.floating{
+    position: fixed;
+    bottom: 10%;
+    right: 2%;
+}
+.fa-info{
+    font-size: 33px;
+    background-color: #49c5b6;
+    border-radius: 213px;
+    padding:9px 20px;
+    border: 1px solid black;
 }

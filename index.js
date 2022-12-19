@@ -1,10 +1,23 @@
+let input = document.querySelector('#spelling');
+let input1 = document.querySelector('.input1');
+let total = document.querySelector('.total');
+let points = document.querySelector('.points');
+let repeat = document.querySelector('.repeat');
+let next = document.querySelector('.next');
+let clear = document.querySelector('.clear');
+let scorepoints = localStorage.getItem("score");
+let index = localStorage.getItem('index');
 let array1 = ["tree", "toy", "doll", "chair", "mother", "peace", "camel", "horse", "family", "friend", "pony", "jump", "forest", "deer", "clouds", "earth", "moon", "sun", "jelly", "bees", "monkey", "bull"];
 let word = document.querySelector('.word');
 let moon = document.querySelector('.moon');
 let list = document.querySelector('.list');
 let bar = document.querySelector('.bar');
 let reveal = document.querySelector('.reveal');
+let score;
+let i;
+let l;
 var myTimeout;
+var myTimeout2;
 function makearray(str) {
 	let array = []; let string = "";
 	for (e in str) {
@@ -19,10 +32,9 @@ function makearray(str) {
 	return array;
 }
 let newArray = [];
-let array = [];
-let l;
 newArray = makearray("attack attend bicycle breakfast brightly cabbage cable carpenter channel circle climb comfort comical confirm construct curtain customer damage decide delight disappear discover empty encourage entertain equal exactly forever fruit fuel group guard guest guide guitar handle health heart heavily helmet idea kindness level locket lumber magic melon meter money motor mountain partner perfect perhaps personal plastic pocket protect provide railways record reward shoulder socket stranger stroll subject suit supply temper theatre total toward treatment useful vacant windy writer");
 let hardArray = makearray("abash abate abdicate aberration abstain abstruse acknowledgment adequate adjudicate adroit adversity amicable analogous annul applause apprehension aquatic arbitrary arid aristocracy articulation aspiration assessment assimilate asylum available avert basin bemoan benevolent bewildered bias boisterous boondoggle brazen brusque canny capability capacious capitulate caveat chaff chronic circumvent clairvoyant classic cognitive coherence collaborate combat commemorate commission comply concept concomitant condescending condition conjunction conspicuous constrain context controversy corollary corrugated covert decipher defunct delineate diversity dominant effective efficacy efficient elliptical eloquent embellish emission encompass endow engender enhancement enormous environment ethnic eventually evident expanse explicit export extravagant facilitate fiduciary finance framework frugality gregarious habitat harass harassment hereditary heritage hone hybrid illegitimate immerse immigrant imperative implicit improbable inalienable incident income indict indigenous infrastructure inimical innovative integrate intransigence jurisdiction jurisprudence kaleidoscope laud laudatory legacy legislate livelihood malediction mandate mayhem methodology migratory motivate muster")
+let array = [];
 function myTimer() {
 	window.speechSynthesis.pause();
 	window.speechSynthesis.resume();
@@ -30,6 +42,7 @@ function myTimer() {
 }
 function sound(text) {
 	window.speechSynthesis.cancel();
+	myTimeout = setTimeout(myTimer, 10000);
 	var utt = new SpeechSynthesisUtterance(text);
 	utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Alice');
 	utt.pitch = 1;
@@ -37,12 +50,23 @@ function sound(text) {
 	utt.onend = function () { clearTimeout(myTimeout); }
 	window.speechSynthesis.speak(utt);
 }
-async function greeting(score, l) {
-	sound(`Welcome here your current score is ${score} out of ${l}`);
+function myTimer2() {
+	window.speechSynthesis.pause();
+	window.speechSynthesis.resume();
+	myTimeout2 = setTimeout(myTimer2, 100000);
 }
-async function sessionmem() {
-	sessionStorage.setItem('greet', "greetend");
+function sound2(text) {
+	window.speechSynthesis.cancel();
+	myTimeout2 = setTimeout(myTimer2, 100000);
+	var utt = new SpeechSynthesisUtterance(text);
+	utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Alice');
+	utt.pitch = 1;
+	utt.rate = 0.9;
+	utt.onend = function () { clearTimeout(myTimeout); }
+	window.speechSynthesis.speak(utt);
 }
+
+
 function Scoring(num, coloring) {
 	if (num > 0) {
 		coloring.style.color = 'green';
@@ -54,19 +78,7 @@ function Scoring(num, coloring) {
 		coloring.style.color = 'red';
 	}
 }
-let input = document.querySelector('#spelling');
-let input1 = document.querySelector('.input1');
-let total = document.querySelector('.total');
-let points = document.querySelector('.points');
-let repeat = document.querySelector('.repeat');
-let next = document.querySelector('.next');
-let clear = document.querySelector('.clear');
-let scorepoints = localStorage.getItem("score");
-let index = localStorage.getItem('index');
-let score;
-let i;
 let sesiongreet = sessionStorage.getItem("greet");
-myTimeout = setTimeout(myTimer, 10000);
 
 let level = document.querySelectorAll(".level");
 level.forEach((element, index) => {
@@ -172,24 +184,24 @@ reveal.addEventListener("click", function () {
 
 
 clear.addEventListener("click", function () {
-	if(array[0]==='tree'){
-			localStorage.removeItem("index1");
-			localStorage.removeItem("score1");
+	if (array[0] === 'tree') {
+		localStorage.removeItem("index1");
+		localStorage.removeItem("score1");
 	}
-	else if(array[0]==='attack'){
-			localStorage.removeItem("index2");
-			localStorage.removeItem("score2");
+	else if (array[0] === 'attack') {
+		localStorage.removeItem("index2");
+		localStorage.removeItem("score2");
 	}
-	else{
-		localStorage.removeItem("index3");		
-		localStorage.removeItem("score3");		
+	else {
+		localStorage.removeItem("index3");
+		localStorage.removeItem("score3");
 	}
 	word.style.color = 'transparent';
 	if (array[i] === undefined) {
 		sound("Please select a level and start the game");
 	}
 	else {
-		score = 0;	
+		score = 0;
 		i = 0;
 		input.value = "";
 		points.innerHTML = score;
@@ -198,8 +210,6 @@ clear.addEventListener("click", function () {
 		word.innerHTML = array[i];
 	}
 })
-
-
 
 
 
@@ -213,6 +223,7 @@ repeat.addEventListener("click", function () {
 	}
 })
 
+
 let check = 1;
 moon.addEventListener('click', function (e) {
 	word.style.color = 'transparent';
@@ -220,7 +231,7 @@ moon.addEventListener('click', function (e) {
 		moon.innerHTML = '☀️';
 		document.body.style.color = 'white';
 		document.body.style.background = 'black';
-		bar.style.border = '3px solid white';
+		bar.style.border = '1px solid white';
 		points.style.color = 'white';
 		check++;
 	}
@@ -228,10 +239,20 @@ moon.addEventListener('click', function (e) {
 		moon.innerHTML = '🌑';
 		document.body.style.color = 'black';
 		document.body.style.background = 'white';
-		bar.style.border = '3px solid black';
+		bar.style.border = '1px solid black';
 		points.style.color = 'black';
 		check++;
 	}
+})
+
+//  instructions
+let floating = document.querySelector('.floating');
+let text = 0;
+floating.addEventListener("click", function () {
+	sound2(`Welcome to Spell Hornet, This is the place to sharpen and test
+	your english spelling skills, You first have to select the level
+	of difficulty, and then type the word as I ask, and you will be
+	scored accordingly. Lets go!`)
 })
 
 
