@@ -135,6 +135,7 @@ level.forEach((element, index) => {
 			word.innerHTML = array[i];
 			points.innerHTML = score;
 		}
+		Scoring(score, points);
 		total.innerHTML = `/${l}`;
 	})
 });
@@ -245,14 +246,15 @@ moon.addEventListener('click', function (e) {
 	}
 })
 
-//  instructions
+// instructions
+
 let floating = document.querySelector('.floating');
 let text = 0;
 floating.addEventListener("click", function () {
 	sound2(`Welcome to Spell Hornet, This is the place to sharpen and test
 	your english spelling skills, You first have to select the level
 	of difficulty, and then type the word as I ask, and you will be
-	scored accordingly. Lets go!`)
+	scored accordingly. Lets go!`);
 })
 
 

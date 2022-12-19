@@ -1,6 +1,6 @@
 /* pre defined classes*/
 body {
-    margin: 8px 8px;
+    margin: 2px 2px;
 }
 
 .align {
@@ -22,7 +22,6 @@ body {
 /* css variables */
 
 :root {
-    /* --blue: #8636cc; */
     --blue: #49c5b6;
 }
 
@@ -37,7 +36,7 @@ body {
 .bar {
     justify-content: flex-start;
     background-color: var(--blue);
-    padding: 6px 16px;
+    padding: 0px 10px;
     color: white;
     border-radius: 2px;
     border: 1px solid black;
@@ -53,9 +52,16 @@ body {
 }
 
 .instructions {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
     margin: 40px 12px;
     letter-spacing: 1px;
     line-height: 23px;
+}
+.instr{
+    margin: 10px 0px;
 }
 
 .image {
@@ -145,4 +151,18 @@ a {
 
 .floating:hover {
     cursor: pointer;
+}
+
+
+/* media queries */
+
+@media screen and (min-width: 727px) {
+    .instructions{
+        margin: 40px 83px;
+    }
+}
+@media screen and (min-width: 926px) {
+    .instructions{
+        margin: 40px 183px;
+    }
 }
