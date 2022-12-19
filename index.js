@@ -72,7 +72,7 @@ function Scoring(num, coloring) {
 		coloring.style.color = 'green';
 	}
 	else if (num == 0) {
-		coloring.style.color = "black";
+		coloring.style.color = "white";
 	}
 	else {
 		coloring.style.color = 'red';
