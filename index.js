@@ -234,8 +234,8 @@ moon.addEventListener('click', function (e) {
 	console.log(link2);
 	word.style.color = 'transparent';
 	if (check % 2 == 0) {
-		link2.style.color='white'
-		
+		link2.style.color = 'white'
+
 		moon.innerHTML = '☀️';
 		bar.style.border = '3px solid white';
 		points.style.color = 'white';
@@ -244,7 +244,7 @@ moon.addEventListener('click', function (e) {
 		check++;
 	}
 	else {
-		link2.style.color='black'
+		link2.style.color = 'black'
 		moon.innerHTML = '🌑';
 		bar.style.border = '3px solid black';
 		points.style.color = 'black';

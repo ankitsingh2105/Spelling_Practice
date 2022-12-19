@@ -34,10 +34,12 @@ body {
     color: black;
     font-size: 18px;
 }
-.list2{
-    margin-right :30px;
+
+.list2 {
+    margin-right: 30px;
 }
-.list:hover{
+
+.list:hover {
     cursor: pointer;
 }
 
@@ -68,7 +70,8 @@ body {
     letter-spacing: 1px;
     line-height: 23px;
 }
-.instr{
+
+.instr {
     margin: 10px 0px;
 }
 
@@ -77,12 +80,15 @@ body {
     height: 50px;
     width: 50px;
 }
-.moon{
+
+.moon {
     margin-right: 0px;
 }
+
 .main {
     margin-top: 30px;
 }
+
 .score {
     font-size: 52px;
 }
@@ -163,37 +169,43 @@ a {
 .floating:hover {
     cursor: pointer;
 }
-.links{
+
+.links {
     font-size: 33px;
     margin: 32px 10px;
 }
-.fa-github{
+
+.fa-github {
     font-size: 34px;
     margin-bottom: 12px;
     color: white;
 }
-.clear{
+
+.clear {
     margin: 0px 5px;
 }
 
 /* media queries */
 @media screen and (min-width: 393px) {
-    .clear{
+    .clear {
         margin: 0px 18px;
     }
 }
+
 @media screen and (min-width: 600px) {
-    .clear{
+    .clear {
         margin: 0px 28px;
     }
 }
+
 @media screen and (min-width: 727px) {
-    .instructions{
+    .instructions {
         margin: 40px 83px;
     }
 }
+
 @media screen and (min-width: 926px) {
-    .instructions{
+    .instructions {
         margin: 40px 183px;
     }
 }
