@@ -132,9 +132,12 @@ a {
     right: 2%;
 }
 .fa-info{
-    font-size: 33px;
+    font-size: 23px;
     background-color: #49c5b6;
     border-radius: 213px;
-    padding:6px 20px;
+    padding:15px 15px;
     border: 1px solid black;
+}
+.floating:hover{
+    cursor: pointer;
 }
