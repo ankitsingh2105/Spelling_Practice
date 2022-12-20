@@ -38,15 +38,15 @@ let array = [];
 function myTimer() {
 	window.speechSynthesis.pause();
 	window.speechSynthesis.resume();
-	myTimeout = setTimeout(myTimer, 10000);
+	myTimeout = setTimeout(myTimer, 3000);
 }
 function sound(text) {
 	window.speechSynthesis.cancel();
-	myTimeout = setTimeout(myTimer, 10000);
+	myTimeout = setTimeout(myTimer, 3000);
 	var utt = new SpeechSynthesisUtterance(text);
 	utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Alice');
 	utt.pitch = 1;
-	utt.rate = 0.9;
+	utt.rate = 0.86;
 	utt.onend = function () { clearTimeout(myTimeout); }
 	window.speechSynthesis.speak(utt);
 }
@@ -210,7 +210,15 @@ clear.addEventListener("click", function () {
 		input.value = "";
 		points.innerHTML = score;
 		Scoring(score, points);
-		sound(` RE-starting the game`);
+		if (array[0] == "tree") {
+			sound(` RE-starting easy level`);
+		}
+		else if (array[0] == "attack") {
+			sound(` RE-starting medium level`);
+		}
+		else {
+			sound(` RE-starting hard level`);
+		}
 		word.innerHTML = array[i];
 	}
 })
@@ -235,18 +243,18 @@ moon.addEventListener('click', function (e) {
 	word.style.color = 'transparent';
 	if (check % 2 == 0) {
 		link2.style.color = 'white'
-
 		moon.innerHTML = '☀️';
-		bar.style.border = '3px solid white';
+		// bar.style.border = '3px solid rgba(22, 35, 57, 0.94)';
 		points.style.color = 'white';
 		document.body.style.color = 'white';
-		document.body.style.background = 'black';
+		// document.body.style.background = 'rgba(22, 35, 57, 0.94)';
+		document.body.style.background = 'rgb(23, 25, 25)';
 		check++;
 	}
 	else {
 		link2.style.color = 'black'
 		moon.innerHTML = '🌑';
-		bar.style.border = '3px solid black';
+		// bar.style.border = '3px solid rgba(22, 35, 57, 0.94)';
 		points.style.color = 'black';
 		document.body.style.color = 'black';
 		document.body.style.background = 'white';
@@ -264,8 +272,5 @@ floating.addEventListener("click", function () {
 	of difficulty, and then type the word as I ask, and you will be
 	scored accordingly. Lets go!`);
 })
-
-
-
 
 
