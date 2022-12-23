@@ -1,9 +1,9 @@
 /* pre defined classes*/
 body {
     margin: 2px 2px;
-    background-color: rgba(22, 35, 57, 0.94);
-    background-color: rgb(23, 25, 25);
-    color: white;
+    /* background-color: rgba(22, 35, 57, 0.94);
+    background-color: rgb(23, 25, 25); */
+    color: black;
 }
 
 .align {
@@ -51,18 +51,18 @@ body {
     padding: 0px 10px;
     color: white;
     border-radius: 2px;
-    border:3px solid rgba(22, 35, 57, 0.94);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.head {
-    text-shadow: 1px 1px 1px var(--blue);
-    margin-top: 30px;
+    border: 3px solid rgba(22, 35, 57, 0.94);
 }
 
 .bar :last-child {
     margin-left: auto;
 }
+
+.head {
+    text-shadow: 1px 1px 1px var(--blue);
+    margin-top: 23px;
+}
+
 
 .instructions {
     display: flex;
@@ -95,7 +95,8 @@ body {
 .score {
     font-size: 52px;
 }
-.level2{
+
+.level2 {
     margin: 0px 4rem;
 }
 
@@ -124,7 +125,7 @@ li {
     list-style: none;
     margin: 0px 22px 0px 0px;
     font-weight: bolder;
-    font-family: Pacifico,cursive;
+    font-size: 20px;
 }
 
 button {
@@ -151,8 +152,8 @@ input {
     border-radius: 5px;
 }
 
-h1{
-    font-family: Pacifico,cursive;
+h1 {
+    font-family: Pacifico, cursive;
     font-weight: 400;
 }
 
@@ -190,11 +191,14 @@ a {
 .fa-github {
     font-size: 34px;
     margin-bottom: 12px;
-    color: white;
+    color: black;
 }
 
 .clear {
     margin: 0px 5px;
+}
+strong{
+    text-shadow: .1px .1px .1px black;
 }
 
 /* media queries */
@@ -208,7 +212,8 @@ a {
     .clear {
         margin: 0px 28px;
     }
-    .level2{
+
+    .level2 {
         margin: 0px 8rem;
     }
 }
@@ -219,8 +224,21 @@ a {
     }
 }
 
-@media screen and (min-width: 926px) {
+@media screen and (min-width: 964px) {
     .instructions {
-        margin: 40px 183px;
+        margin: 40px 12px;
+    }
+    .first {
+        margin: 0px 80px;
+    }
+    .align3 {
+        margin-top: -20px;
+    }
+}
+
+@media screen and (max-width: 965px) {
+    .align3 {
+        flex-direction: column;
+        margin-top: -20px;
     }
 }

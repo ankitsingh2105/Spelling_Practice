@@ -38,11 +38,10 @@ let array = [];
 function myTimer() {
 	window.speechSynthesis.pause();
 	window.speechSynthesis.resume();
-	myTimeout = setTimeout(myTimer, 3000);
 }
 function sound(text) {
 	window.speechSynthesis.cancel();
-	myTimeout = setTimeout(myTimer, 3000);
+	myTimeout = setTimeout(myTimer, 2500);
 	var utt = new SpeechSynthesisUtterance(text);
 	utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Alice');
 	utt.pitch = 1;
@@ -53,7 +52,6 @@ function sound(text) {
 function myTimer2() {
 	window.speechSynthesis.pause();
 	window.speechSynthesis.resume();
-	myTimeout2 = setTimeout(myTimer2, 20000);
 }
 function sound2(text) {
 	window.speechSynthesis.cancel();
@@ -135,7 +133,6 @@ level.forEach((element, index) => {
 			word.innerHTML = array[i];
 			points.innerHTML = score;
 		}
-		Scoring(score, points);
 		total.innerHTML = `/${l}`;
 	})
 });
@@ -209,7 +206,6 @@ clear.addEventListener("click", function () {
 		i = 0;
 		input.value = "";
 		points.innerHTML = score;
-		Scoring(score, points);
 		if (array[0] == "tree") {
 			sound(` RE-starting easy level`);
 		}
@@ -241,10 +237,10 @@ let link2 = document.querySelector('.fa-github');
 moon.addEventListener('click', function (e) {
 	console.log(link2);
 	word.style.color = 'transparent';
-	if (check % 2 == 0) {
+	if (check % 2 != 0) {
 		link2.style.color = 'white'
 		moon.innerHTML = '☀️';
-		// bar.style.border = '3px solid rgba(22, 35, 57, 0.94)';
+		bar.style.border = '3px solid white';
 		points.style.color = 'white';
 		document.body.style.color = 'white';
 		// document.body.style.background = 'rgba(22, 35, 57, 0.94)';
@@ -253,9 +249,9 @@ moon.addEventListener('click', function (e) {
 	}
 	else {
 		link2.style.color = 'black'
-		moon.innerHTML = '🌑';
-		// bar.style.border = '3px solid rgba(22, 35, 57, 0.94)';
 		points.style.color = 'black';
+		moon.innerHTML = '🌑';
+		bar.style.border = '3px solid rgba(22, 35, 57, 0.94)';
 		document.body.style.color = 'black';
 		document.body.style.background = 'white';
 		check++;
@@ -268,9 +264,9 @@ let floating = document.querySelector('.floating');
 let text = 0;
 floating.addEventListener("click", function () {
 	sound2(`Welcome to Spell Hornet, This is the place to sharpen and test
-	your english spelling skills, You first have to select the level
+	your english spelling skills, you first have to select the level
 	of difficulty, and then type the word as I ask, and you will be
-	scored accordingly. Lets go!`);
+	scored accordingly`);
 })
 
 
