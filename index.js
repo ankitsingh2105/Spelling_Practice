@@ -63,7 +63,7 @@ level.forEach((element, index) => {
 	element.addEventListener("click", function () {
 		word.style.color = 'transparent';
 		if (index === 0) {
-			sound(`easy level selected!`)
+			sound(`easy level selected!`);
 			let indexNumber = localStorage.getItem("index1");
 			let Score = localStorage.getItem("score1");
 			if (indexNumber === null) {
@@ -113,6 +113,7 @@ level.forEach((element, index) => {
 			word.innerHTML = array[i];
 			points.innerHTML = score;
 		}
+		sound(`and you current word is ${array[i]}`);
 		total.innerHTML = `/${l}`;
 	})
 });
