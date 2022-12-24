@@ -113,7 +113,7 @@ level.forEach((element, index) => {
 			word.innerHTML = array[i];
 			points.innerHTML = score;
 		}
-		sound(`and you current word is ${array[i]}`);
+		sound(`and your current word is ${array[i]}`);
 		total.innerHTML = `/${l}`;
 	})
 });
