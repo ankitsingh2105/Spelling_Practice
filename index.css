@@ -18,6 +18,9 @@ body {
     justify-content: center;
     flex-direction: column;
 }
+.code{
+    display: none;
+}
 
 /* define end */
 
@@ -31,7 +34,14 @@ body {
 
 /* var end */
 
+/*  code style  */
 
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/*  end */
 .list {
     color: black;
     font-size: 18px;

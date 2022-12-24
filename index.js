@@ -35,31 +35,11 @@ let newArray = [];
 newArray = makearray("attack attend bicycle breakfast brightly cabbage cable carpenter channel circle climb comfort comical confirm construct curtain customer damage decide delight disappear discover empty encourage entertain equal exactly forever fruit fuel group guard guest guide guitar handle health heart heavily helmet idea kindness level locket lumber magic melon meter money motor mountain partner perfect perhaps personal plastic pocket protect provide railways record reward shoulder socket stranger stroll subject suit supply temper theatre total toward treatment useful vacant windy writer");
 let hardArray = makearray("abash abate abdicate aberration abstain abstruse acknowledgment adequate adjudicate adroit adversity amicable analogous annul applause apprehension aquatic arbitrary arid aristocracy articulation aspiration assessment assimilate asylum available avert basin bemoan benevolent bewildered bias boisterous boondoggle brazen brusque canny capability capacious capitulate caveat chaff chronic circumvent clairvoyant classic cognitive coherence collaborate combat commemorate commission comply concept concomitant condescending condition conjunction conspicuous constrain context controversy corollary corrugated covert decipher defunct delineate diversity dominant effective efficacy efficient elliptical eloquent embellish emission encompass endow engender enhancement enormous environment ethnic eventually evident expanse explicit export extravagant facilitate fiduciary finance framework frugality gregarious habitat harass harassment hereditary heritage hone hybrid illegitimate immerse immigrant imperative implicit improbable inalienable incident income indict indigenous infrastructure inimical innovative integrate intransigence jurisdiction jurisprudence kaleidoscope laud laudatory legacy legislate livelihood malediction mandate mayhem methodology migratory motivate muster")
 let array = [];
-function myTimer() {
-	window.speechSynthesis.pause();
-	window.speechSynthesis.resume();
-}
 function sound(text) {
-	window.speechSynthesis.cancel();
-	myTimeout = setTimeout(myTimer, 2500);
 	var utt = new SpeechSynthesisUtterance(text);
 	utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Alice');
 	utt.pitch = 1;
-	utt.rate = 0.86;
-	utt.onend = function () { clearTimeout(myTimeout); }
-	window.speechSynthesis.speak(utt);
-}
-function myTimer2() {
-	window.speechSynthesis.pause();
-	window.speechSynthesis.resume();
-}
-function sound2(text) {
-	window.speechSynthesis.cancel();
-	myTimeout2 = setTimeout(myTimer2, 20000);
-	var utt = new SpeechSynthesisUtterance(text);
-	utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Google US English');
-	utt.pitch = 1;
-	utt.rate = 0.9;
+	utt.rate = 1;
 	utt.onend = function () { clearTimeout(myTimeout); }
 	window.speechSynthesis.speak(utt);
 }
@@ -263,10 +243,28 @@ moon.addEventListener('click', function (e) {
 let floating = document.querySelector('.floating');
 let text = 0;
 floating.addEventListener("click", function () {
-	sound2(`Welcome to Spell Hornet, This is the place to sharpen and test
+	sound(`Welcome to Spell Hornet. My name is Alice. This is the place to sharpen and test
 	your english spelling skills, you first have to select the level
 	of difficulty, and then type the word as I ask, and you will be
 	scored accordingly`);
+})
+let state = true;
+let dev = document.querySelector('.dev');
+let code = document.querySelector('.code');
+let no_dev = document.querySelector('.no_dev');
+dev.addEventListener("click", function () {
+	if (state) {
+		code.style.display = "block";
+		no_dev.style.display = "none";
+		dev.innerHTML="Normal";
+		state=false;
+	}
+	else {
+		code.style.display = "none";
+		dev.innerHTML="Dev. Mode";
+		no_dev.style.display = "block";
+		state=true;
+	}
 })
 
 
