@@ -247,15 +247,7 @@ floating.addEventListener("click", function () {
 	but super lite version. This is the place to sharpen and test
 	your english spelling skills, you first have to select the level
 	of difficulty, and then type the word as I ask, and you will be
-	scored accordingly Welcome to Spell Hornet. My name is Chitti, from the movie Robot, 
-	but super lite version. This is the place to sharpen and test
-	your english spelling skills, you first have to select the level
-	of difficulty, and then type the word as I ask, and you will be
-	scored accordingly Welcome to Spell Hornet. My name is Chitti, from the movie Robot, 
-	but super lite version. This is the place to sharpen and test
-	your english spelling skills, you first have to select the level
-	of difficulty, and then type the word as I ask, and you will be
-	scored accordingly`);
+	scored accordingly.`);
 })
 let state = true;
 let dev = document.querySelector('.dev');
