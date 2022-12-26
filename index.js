@@ -36,14 +36,10 @@ newArray = makearray("attack attend bicycle breakfast brightly cabbage cable car
 let hardArray = makearray("abash abate abdicate aberration abstain abstruse acknowledgment adequate adjudicate adroit adversity amicable analogous annul applause apprehension aquatic arbitrary arid aristocracy articulation aspiration assessment assimilate asylum available avert basin bemoan benevolent bewildered bias boisterous boondoggle brazen brusque canny capability capacious capitulate caveat chaff chronic circumvent clairvoyant classic cognitive coherence collaborate combat commemorate commission comply concept concomitant condescending condition conjunction conspicuous constrain context controversy corollary corrugated covert decipher defunct delineate diversity dominant effective efficacy efficient elliptical eloquent embellish emission encompass endow engender enhancement enormous environment ethnic eventually evident expanse explicit export extravagant facilitate fiduciary finance framework frugality gregarious habitat harass harassment hereditary heritage hone hybrid illegitimate immerse immigrant imperative implicit improbable inalienable incident income indict indigenous infrastructure inimical innovative integrate intransigence jurisdiction jurisprudence kaleidoscope laud laudatory legacy legislate livelihood malediction mandate mayhem methodology migratory motivate muster")
 let array = [];
 function sound(text) {
-	var utt = new SpeechSynthesisUtterance(text);
-	utt.voice = window.speechSynthesis.getVoices().find(voice => voice.name === 'Alice');
-	utt.pitch = 1;
-	utt.rate = 1;
-	utt.onend = function () { clearTimeout(myTimeout); }
-	window.speechSynthesis.speak(utt);
+	const synth = window.speechSynthesis;
+	synth.cancel();
+	synth.speak(new SpeechSynthesisUtterance(text));
 }
-
 
 function Scoring(num, coloring) {
 	if (num > 0) {
@@ -60,10 +56,11 @@ let sesiongreet = sessionStorage.getItem("greet");
 
 let level = document.querySelectorAll(".level");
 level.forEach((element, index) => {
+	let difficulty;
 	element.addEventListener("click", function () {
 		word.style.color = 'transparent';
 		if (index === 0) {
-			sound(`easy level selected!`);
+			difficulty = 'easy';
 			let indexNumber = localStorage.getItem("index1");
 			let Score = localStorage.getItem("score1");
 			if (indexNumber === null) {
@@ -80,6 +77,7 @@ level.forEach((element, index) => {
 			points.innerHTML = score;
 		}
 		else if (index === 1) {
+			difficulty = 'medium';
 			sound(`medium level selected!`)
 			let indexNumber1 = localStorage.getItem("index2");
 			let Score1 = localStorage.getItem("score2");
@@ -97,6 +95,7 @@ level.forEach((element, index) => {
 			points.innerHTML = score;
 		}
 		else {
+			difficulty = 'hard';
 			sound(`hard level selected!`)
 			let indexNumber2 = localStorage.getItem("index3");
 			let Score2 = localStorage.getItem("score3");
@@ -113,7 +112,7 @@ level.forEach((element, index) => {
 			word.innerHTML = array[i];
 			points.innerHTML = score;
 		}
-		sound(`and your current word is ${array[i]}`);
+		sound(`${difficulty} level selected!and your current word is ${array[i]}`);
 		total.innerHTML = `/${l}`;
 	})
 });
@@ -244,7 +243,16 @@ moon.addEventListener('click', function (e) {
 let floating = document.querySelector('.floating');
 let text = 0;
 floating.addEventListener("click", function () {
-	sound(`Welcome to Spell Hornet. My name is Alice. This is the place to sharpen and test
+	sound(`Welcome to Spell Hornet. My name is Chitti, from the movie Robot, 
+	but super lite version. This is the place to sharpen and test
+	your english spelling skills, you first have to select the level
+	of difficulty, and then type the word as I ask, and you will be
+	scored accordingly Welcome to Spell Hornet. My name is Chitti, from the movie Robot, 
+	but super lite version. This is the place to sharpen and test
+	your english spelling skills, you first have to select the level
+	of difficulty, and then type the word as I ask, and you will be
+	scored accordingly Welcome to Spell Hornet. My name is Chitti, from the movie Robot, 
+	but super lite version. This is the place to sharpen and test
 	your english spelling skills, you first have to select the level
 	of difficulty, and then type the word as I ask, and you will be
 	scored accordingly`);
@@ -257,15 +265,31 @@ dev.addEventListener("click", function () {
 	if (state) {
 		code.style.display = "block";
 		no_dev.style.display = "none";
-		dev.innerHTML="Normal";
-		state=false;
+		dev.innerHTML = "Normal";
+		state = false;
 	}
 	else {
 		code.style.display = "none";
-		dev.innerHTML="Dev. Mode";
+		dev.innerHTML = "Dev. Mode";
 		no_dev.style.display = "block";
-		state=true;
+		state = true;
 	}
 })
+
+
+// TODO : trying to add enthusiasm in the voice but  failed
+
+// const synth = window.speechSynthesis;
+
+// // Create a new SpeechSynthesisUtterance object
+// const utterance = new SpeechSynthesisUtterance("Hello, World!");
+
+// // Set the pitch and rate to higher values to add enthusiasm
+// utterance.pitch = 1.5;
+// utterance.rate = 1.5;
+
+// // Start speech synthesis
+// synth.speak(utterance);
+
 
 
