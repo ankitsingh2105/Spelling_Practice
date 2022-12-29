@@ -218,6 +218,7 @@ moon.addEventListener('click', function (e) {
 	console.log(link2);
 	word.style.color = 'transparent';
 	if (check % 2 != 0) {
+		sound("Dark Mode activated");
 		link2.style.color = 'white'
 		moon.innerHTML = '☀️';
 		bar.style.border = '3px solid white';
@@ -228,6 +229,7 @@ moon.addEventListener('click', function (e) {
 		check++;
 	}
 	else {
+		sound("Light Mode activated");
 		link2.style.color = 'black'
 		points.style.color = 'black';
 		moon.innerHTML = '🌑';
@@ -247,15 +249,7 @@ floating.addEventListener("click", function () {
 	but super lite version. This is the place to sharpen and test
 	your english spelling skills, you first have to select the level
 	of difficulty, and then type the word as I ask, and you will be
-	scored accordingly Welcome to Spell Hornet. My name is Chitti, from the movie Robot, 
-	but super lite version. This is the place to sharpen and test
-	your english spelling skills, you first have to select the level
-	of difficulty, and then type the word as I ask, and you will be
-	scored accordingly Welcome to Spell Hornet. My name is Chitti, from the movie Robot, 
-	but super lite version. This is the place to sharpen and test
-	your english spelling skills, you first have to select the level
-	of difficulty, and then type the word as I ask, and you will be
-	scored accordingly`);
+	scored accordingly.`);
 })
 let state = true;
 let dev = document.querySelector('.dev');
@@ -275,6 +269,18 @@ dev.addEventListener("click", function () {
 		state = true;
 	}
 })
+
+
+// Notification.requestPermission().then(function(permission) {
+// 	var notification;
+// 	if (permission === "granted") {
+// 		notification = new Notification("Hello, world!");
+// 	}
+// 	else if(permission=='denied') {
+// 		notification = new Notification("abe saale ");
+// 	}
+//   });
+  
 
 
 // TODO : trying to add enthusiasm in the voice but  failed
